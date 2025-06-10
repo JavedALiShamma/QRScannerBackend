@@ -21,5 +21,5 @@ app.get('/bins', (req, res) => {
   res.json({ message: 'BIN80046001' });
 });
 
-// Export as serverless function
+// Export serverless handler
 module.exports = serverless(app);
