@@ -18,7 +18,11 @@ app.get('/', (req, res) => {
 });
 
 app.get('/bins', (req, res) => {
-  res.json({ message: 'BIN80046001' });
+  try {
+    res.json({ message: 'BIN80046001' });
+  } catch (error) {
+    res.status(500).json({ error: 'Internal Server Error' });
+  }
 });
 
 // Export serverless handler
